@@ -3,14 +3,15 @@ package USACOTraining;
 /*
 ID: adityap12
 LANG: JAVA
-TASK: ride
+TASK: friday
 */
 import java.io.*;
 import java.util.*;
-class friday {
-    public static void main (String [] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("friday.in"));
+public class friday {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader f = new BufferedReader(new FileReader("beads.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("friday.out")));
 
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -42,19 +43,41 @@ class friday {
                 map.get(3)+" "+
                 map.get(4)+" "+
                 map.get(5)+" "+
-                map.get(6)+" ");
+                map.get(6));
+        out.println();
         out.close();
 
     }
 
 
     public static int numberOfDays(int month, int year){
-        return switch (month) {
+/*        return switch (month) {
             case 0, 2, 4, 6, 7, 9, 11 -> 31;
             case 3, 5, 8, 10 -> 30;
             case 1 -> isLeapYear(year) ? 29 : 28;
             default -> -1;
         };
+        DOESNT WORK ON USACO CUZ THEY ARE USING JAVA 7
+        */
+        switch (month){
+            case 0:return 31;
+            case 1:
+                if(isLeapYear(year)){
+                    return 29;
+                }else
+                    return 28;
+            case 2:return 31;
+            case 3:return 30;
+            case 4:return 31;
+            case 5:return 30;
+            case 6:return 31;
+            case 7:return 31;
+            case 8:return 30;
+            case 9:return 31;
+            case 10:return 30;
+            case 11:return 31;
+            default:return -1;
+        }
     }
 
 
