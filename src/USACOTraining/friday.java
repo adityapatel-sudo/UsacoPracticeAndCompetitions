@@ -11,7 +11,7 @@ import java.util.*;
 public class friday {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("beads.in"));
+        BufferedReader f = new BufferedReader(new FileReader("milk2.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("friday.out")));
 
         HashMap<Integer, Integer> map = new HashMap<>();
