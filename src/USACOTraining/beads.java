@@ -11,7 +11,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 public class beads {
     public static void main(String[] args) throws IOException {
-        BufferedReader f = new BufferedReader(new FileReader("milk2.in"));
+        BufferedReader f = new BufferedReader(new FileReader("socdist1.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("beads.out")));
 
         f.readLine();

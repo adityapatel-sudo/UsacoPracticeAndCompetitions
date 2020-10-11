@@ -11,7 +11,7 @@ import java.util.*;
 class ride {
     public static void main (String [] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("milk2.in"));
+        BufferedReader f = new BufferedReader(new FileReader("socdist1.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("test.out")));
 
 
