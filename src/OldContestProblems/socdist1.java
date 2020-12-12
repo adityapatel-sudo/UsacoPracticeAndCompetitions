@@ -7,77 +7,145 @@ TASK: socdist1
 */
 
 import java.io.*;
+import java.util.Arrays;
 
 
 public class socdist1 {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("socdist1.in"));
+        BufferedReader f = new BufferedReader(new FileReader("hoofball.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("socdist1.out")));
 
-        int length = Integer.parseInt(f.readLine());
+        f.readLine();
 
         int[] order = toArray(f.readLine());
-        int largest = 0;
-        int secondLargest = 0;
+        System.out.println("first value of 0:"+findLargest(order)[0]+"\nsize:"+findLargest(order)[1]);
+        System.out.println("left 0s: "+ findLeft(order)+"\nright 0s: "+ findRight(order)+"\n\n\n");
 
-        ReturnThing returnThing = (smallestDist(order));
-        largest = returnThing.largest;
-        secondLargest = returnThing.secondLargest;
-        int smallestAfter = returnThing.smallest;
-
-        //finds first edge size
-        int firstEdge = 0;
-        while(firstEdge<order.length){
-            if(order[firstEdge]==1) {
-                break;
-            }
-            firstEdge++;
-        }
-        //finds last edge size
-        int lastEdge = 0;
-        while (lastEdge<order.length){
-            if(order[order.length-1-lastEdge]==1){
-                break;
-            }
-            lastEdge++;
-        }
-
-        System.out.print("firstEdge = "+ firstEdge+
-                "\nlargest = "+ largest+
-                "\nsecondLargest = "+ secondLargest+
-                "\nlastEdge = "+ lastEdge);
-
-        firstEdge = firstEdge * 3 / 2;
-        lastEdge = lastEdge * 3 / 2;
-
-        if(firstEdge>largest){
-            secondLargest = largest;
-            largest = firstEdge;
-        }else if(firstEdge>secondLargest){
-            secondLargest = firstEdge;
-        }
-        if(lastEdge>largest){
-            secondLargest = largest;
-            largest = lastEdge;
-        }else if(lastEdge>secondLargest){
-            secondLargest = lastEdge;
-        }
-
-
-
-        if(largest/2>=secondLargest){
-            secondLargest = largest/3;
-        }else if(secondLargest/2<smallestAfter){
-            smallestAfter = secondLargest/2;
-        }
-        System.out.print("\n\nfirstEdge = "+ firstEdge+
-                "\nlargest = "+ largest+
-                "\nsecondLargest = "+ secondLargest+
-                "\nlastEdge = "+ lastEdge);
-
-        out.print(smallestAfter+1);
+        System.out.println(Arrays.toString(order));
+        order = addOne(order);
+        System.out.println(Arrays.toString(order));
+        int smallest = Math.min(findSmallest(order),findLeft(order));
+        smallest = Math.min(smallest,findRight(order));
+        out.print(smallest);
         out.close();
+    }
+
+    public static int[] addOne(int[] before){
+        int left = findLeft(before);
+        int right = findRight(before);
+        int largestSize = findLargest(before)[1];
+        int largest = findLargest(before)[0];
+        largestSize = largestSize - (largestSize/2);
+
+        if(true){
+
+        }else if(largestSize>=left&&largestSize>=right){
+            before[largest+largestSize] = 1;
+            before = doAgain(before);
+        }else if(left>=right){
+            before[0] = 1;
+            before = doAgain(before);
+        }else if(right>left){
+            before[before.length-1] = 1;
+            before = doAgain(before);
+        }
+
+
+        /*
+        System.out.println("first value of 0:"+findLargest(before)[0]+"\nsize:"+findLargest(before)[1]);
+        System.out.println("left 0s: "+ findLeft(before)+"\nright 0s: "+ findRight(before)+"\n\n\n");*/
+
+
+
+        return before;
+    }
+    public static int[] doAgain(int[] before){
+        int left = findLeft(before);
+        int right = findRight(before);
+        int largestSize = findLargest(before)[1];
+        int largest = findLargest(before)[0];
+        largestSize = largestSize - (largestSize/2);
+
+        if(largestSize>=left&&largestSize>=right){
+            before[largest+largestSize] = 1;
+        }else if(left>=right){
+            before[0] = 1;
+        }else{
+            before[before.length-1] = 1;
+        }
+        return new int[5];
+    }
+    public static int findLeft(int[] before){
+        int i = 0;
+        for(; i < before.length;i++){
+            if(before[i]==1){
+                return i;
+            }
+        }
+        return i;
+    }
+    public static int findRight(int[] before){
+        int i = before.length-1;
+        for(; i >= 0;i--){
+            if(before[i]==1){
+                return (before.length-i-1);
+            }
+        }
+        return i;
+    }
+    public static int[] findLargest(int[] before){
+        //size is second value
+        //place is first value(place is index of 1 before series)
+        int largest = 0;
+        int counterSoFar = 0;
+        int cursor = 0;
+        int[] toReturn= new int[2];
+        int location = 0;
+
+        while(0 == before[cursor]){
+            cursor++;
+        }
+
+        for(; cursor <before.length-findRight(before);cursor++, counterSoFar++){
+            if(before[cursor]==1){
+                counterSoFar=0;
+                location = cursor;
+            }
+            if(counterSoFar>largest){
+                toReturn[0] = location;
+                largest = counterSoFar;
+            }
+        }
+        toReturn[1] = largest;
+        return toReturn;
+    }
+    public static int findSmallest(int[] before){
+        //size is second value
+        //place is first value(place is index of 1 before series)
+        int smallest = 1000000000;
+        int counterSoFar = -1;
+        int cursor = 0;
+
+        while(0 == before[cursor]){
+            cursor++;
+        }
+
+        boolean beforeIsOne = true;
+
+        for(; cursor <before.length-findRight(before);cursor++, counterSoFar++){
+            System.out.println("cursor: "+cursor+"countersofar: "+counterSoFar+"smallest; "+smallest);
+            if(before[cursor]==1){
+                if(counterSoFar<smallest&& !beforeIsOne){
+                    smallest = counterSoFar;
+                }
+                beforeIsOne = true;
+                counterSoFar=-1;
+            }else {
+                beforeIsOne = false;
+            }
+        }
+        return smallest;
     }
 
     public static int[] toArray(String temp) {
@@ -86,60 +154,5 @@ public class socdist1 {
             order[i] = Integer.parseInt(String.valueOf(temp.charAt(i)));
         }
         return order;
-    }
-
-    public static ReturnThing smallestDist(int[] order) {
-        int smallest = Integer.MAX_VALUE;
-        int temp = 0;
-        int largest = 0;
-        int secondLargest = 0;
-
-        for (int i = 0; i < order.length; i++) {
-            if (i == 0 && order[i] == 1) {
-                continue;
-            }
-            if (order[i] == 0) {
-                temp++;
-            } else {
-
-                if (smallest > temp) {
-                    smallest = temp;
-                }
-
-                if (temp > largest) {
-                    secondLargest = largest;
-                    largest = temp;
-                }else if(temp>secondLargest){
-                    secondLargest = temp;
-                }
-
-
-                temp = 0;
-            }
-        }
-        ReturnThing returnThing = new ReturnThing(smallest, largest, secondLargest);
-        return returnThing;
-    }
-
-    public static class ReturnThing {
-        public int smallest;
-        public int largest;
-        public int secondLargest;
-
-        public ReturnThing(int smallest, int largest, int secondLargest) {
-            this.smallest = smallest;
-            this.largest = largest;
-            this.secondLargest = secondLargest;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder sb = new StringBuilder();
-            sb.append("smallest = " + smallest);
-            sb.append("\nlargest = " + largest);
-            sb.append("\nsecondLargest = " + secondLargest);
-
-            return sb.toString();
-        }
     }
 }
