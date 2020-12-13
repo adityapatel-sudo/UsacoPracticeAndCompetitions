@@ -26,42 +26,50 @@ public class hoofball {
         for(int i = 0; i< cowLocations.length;i++){
             cowLocationsMap.put(cowLocations[i],i);
         }
-/*
         System.out.println(distances.toString());
         System.out.println(cowLocationsMap.toString());
-        System.out.println("\n"+findLowestBalls(distances,cowLocationsMap));*/
-        out.print(findLowestBalls(distances,cowLocationsMap));
+        System.out.println("\n"+findLowestBalls(distances,cowLocationsMap));
         out.close();
         long end = System.currentTimeMillis();
         System.out.println(end - start);
     }
 
     public static int findLowestBalls(HashMap<Integer,List<Integer>> distances,HashMap<Integer,Integer> cowLocationsMap){
-        for(int i = 0; i < 100;i++) {
+        for(int i = 1; i < 100;i++) {
             if (checkBallWorks(i, distances, new boolean[distances.size()], 0, cowLocationsMap)) return i;
         }
 
         return -1;
     }
 
-    public static boolean checkBallWorks(int balls, HashMap<Integer,List<Integer>> distances, boolean[] passedTo, int cursor,HashMap<Integer,Integer> cowLocationsMap){
+    public static boolean checkBallWorks(int balls, HashMap<Integer,List<Integer>> distances, boolean[] passedTo, int position,HashMap<Integer,Integer> cowLocationsMap){
+
         balls--;
 
-
-        for(; cursor<distances.size(); cursor++){
-            boolean[] notComplete = Arrays.copyOf(passedTo,passedTo.length);
-
-            for(int i = 0; i<distances.get(cursor).size();i++){
-                notComplete[cowLocationsMap.get(distances.get(cursor).get(i))] = true;
-/*                System.out.println(Arrays.toString(notComplete)+" balls = "+ balls + " cursor = "+ cursor);
-                System.out.printf("%1$-10s %2$10d      ",balls,cursor);*/
-            }
-            if(balls==0 && areAllTrue(notComplete)){
-                return areAllTrue(notComplete);
-            }
-            if(balls>0 && checkBallWorks(balls,distances, notComplete,cursor+1, cowLocationsMap)) return true;
-            if(cursor == distances.size()-1) return false;
+        while(position < passedTo.length && passedTo[position]) {
+            position++;
         }
+
+        for(; position<distances.size(); position++){
+
+
+            boolean[] notComplete = Arrays.copyOf(passedTo,passedTo.length); // cost
+
+            // mark touched in passedTo array at current ball start location.
+            for(int i = 0; i < distances.get(position).size();i++){
+                notComplete[cowLocationsMap.get(distances.get(position).get(i))] = true;/*
+                System.out.println(Arrays.toString(notComplete)+" balls = "+ balls + " position = "+ position);*/
+            }
+
+            if(areAllTrue(notComplete)){
+                return true;
+            }
+
+            //
+
+            if(balls > 0 && checkBallWorks(balls ,distances, notComplete,position + 1, cowLocationsMap)) return true;
+        }
+
         return false;
     }
 
@@ -69,6 +77,7 @@ public class hoofball {
         for(boolean b : array) if(!b) return false;
         return true;
     }
+
     public static HashMap<Integer,List<Integer>> findPasses(int[] locs){
         HashMap<Integer,List<Integer>> hashMap = new HashMap<>();
         for(int i = 0;i<locs.length;i++){
@@ -100,7 +109,7 @@ public class hoofball {
         list.add(cowLocations[x]);
 
         if(x==0) return list;
-        while(checkLeft(cowLocations, x)<=checkRight(cowLocations,x)){
+        while(checkLeft(cowLocations, x) <= checkRight(cowLocations,x)){
             x--;
             list.add(cowLocations[x]);
 
