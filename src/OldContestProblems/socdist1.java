@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class socdist1 {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("hoofball.in"));
+        BufferedReader f = new BufferedReader(new FileReader("herding.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("socdist1.out")));
 
         f.readLine();

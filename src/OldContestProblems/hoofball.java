@@ -5,10 +5,13 @@ import java.net.Inet4Address;
 import java.util.*;
 import java.util.List;
 
+//can be solved as puzzle, not programming prob.
+//check solution at http://www.usaco.org/index.php?page=viewproblem2&cpid=808
+
 public class hoofball {
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(new File("hoofball.in"));
+        Scanner scanner = new Scanner(new File("herding.in"));
         PrintWriter out = new PrintWriter(new FileWriter("hoofball.out"));/*
         long start = System.currentTimeMillis();*/
 
