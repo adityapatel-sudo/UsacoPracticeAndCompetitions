@@ -9,8 +9,8 @@ public class hoofball {
     public static void main(String[] args) throws IOException {
 
         Scanner scanner = new Scanner(new File("hoofball.in"));
-        PrintWriter out = new PrintWriter(new FileWriter("hoofball.out"));
-        long start = System.currentTimeMillis();
+        PrintWriter out = new PrintWriter(new FileWriter("hoofball.out"));/*
+        long start = System.currentTimeMillis();*/
 
         int max = scanner.nextInt();
         int[] cowLocations = new int[max];
@@ -26,12 +26,15 @@ public class hoofball {
         for(int i = 0; i< cowLocations.length;i++){
             cowLocationsMap.put(cowLocations[i],i);
         }
+/*
         System.out.println(distances.toString());
         System.out.println(cowLocationsMap.toString());
         System.out.println("\n"+findLowestBalls(distances,cowLocationsMap));
-        out.close();
+*/
+        out.print(findLowestBalls(distances,cowLocationsMap));
+        out.close();/*
         long end = System.currentTimeMillis();
-        System.out.println(end - start);
+        System.out.println(end - start);*/
     }
 
     public static int findLowestBalls(HashMap<Integer,List<Integer>> distances,HashMap<Integer,Integer> cowLocationsMap){
@@ -69,7 +72,6 @@ public class hoofball {
 
             if(balls > 0 && checkBallWorks(balls ,distances, notComplete,position + 1, cowLocationsMap)) return true;
         }
-
         return false;
     }
 
