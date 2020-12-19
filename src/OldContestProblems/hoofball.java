@@ -11,7 +11,7 @@ import java.util.List;
 public class hoofball {
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(new File("herding.in"));
+        Scanner scanner = new Scanner(new File("triangles.in"));
         PrintWriter out = new PrintWriter(new FileWriter("hoofball.out"));/*
         long start = System.currentTimeMillis();*/
 
@@ -57,22 +57,16 @@ public class hoofball {
         }
 
         for(; position<distances.size(); position++){
-
-
-            boolean[] notComplete = Arrays.copyOf(passedTo,passedTo.length); // cost
+            boolean[] notComplete = Arrays.copyOf(passedTo,passedTo.length);
 
             // mark touched in passedTo array at current ball start location.
             for(int i = 0; i < distances.get(position).size();i++){
                 notComplete[cowLocationsMap.get(distances.get(position).get(i))] = true;/*
                 System.out.println(Arrays.toString(notComplete)+" balls = "+ balls + " position = "+ position);*/
             }
-
             if(areAllTrue(notComplete)){
                 return true;
             }
-
-            //
-
             if(balls > 0 && checkBallWorks(balls ,distances, notComplete,position + 1, cowLocationsMap)) return true;
         }
         return false;

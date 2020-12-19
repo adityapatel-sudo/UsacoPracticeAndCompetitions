@@ -9,7 +9,7 @@ public class measurement {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(new File("herding.in"));
+        Scanner scanner = new Scanner(new File("triangles.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("measurement.out")));
 
         int[][] cows = new int[3][100];
