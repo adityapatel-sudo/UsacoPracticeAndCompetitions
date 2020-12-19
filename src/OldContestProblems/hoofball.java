@@ -11,7 +11,7 @@ import java.util.List;
 public class hoofball {
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(new File("breedflip.in"));
+        Scanner scanner = new Scanner(new File("swap.in"));
         PrintWriter out = new PrintWriter(new FileWriter("hoofball.out"));/*
         long start = System.currentTimeMillis();*/
 

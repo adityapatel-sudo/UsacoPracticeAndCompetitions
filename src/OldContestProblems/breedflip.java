@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class breedflip {
 
     public static  void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("breedflip.in"));
+        Scanner scanner = new Scanner(new File("swap.in"));
         PrintWriter out = new PrintWriter(new FileWriter("breedflip.out"));
 
         int max = scanner.nextInt();
