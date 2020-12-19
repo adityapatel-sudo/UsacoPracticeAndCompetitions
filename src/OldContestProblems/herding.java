@@ -10,7 +10,7 @@ public class herding {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(new File("triangles.in"));
+        Scanner sc = new Scanner(new File("breedflip.in"));
         PrintWriter out = new PrintWriter(new FileWriter("herding.out"));
 
         int left,middle,right;

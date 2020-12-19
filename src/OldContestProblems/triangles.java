@@ -1,6 +1,7 @@
 package OldContestProblems;
 
 //working solution, just checks all possible trios of points for largest triangle
+//v easy, did in 20 min
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=1011
 
 
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 public class triangles {
     public static  void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("triangles.in"));
+        Scanner scanner = new Scanner(new File("breedflip.in"));
         PrintWriter out = new PrintWriter(new FileWriter("triangles.out"));
 
         int num = scanner.nextInt();
