@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class socdist1 {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader f = new BufferedReader(new FileReader("swap.in"));
+        BufferedReader f = new BufferedReader(new FileReader("race.in"));
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("socdist1.out")));
 
         f.readLine();

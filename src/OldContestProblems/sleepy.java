@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class sleepy {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("swap.in"));
+        Scanner scanner = new Scanner(new File("race.in"));
         PrintWriter out = new PrintWriter(new FileWriter("sleepy.out"));
 
         int max = scanner.nextInt();

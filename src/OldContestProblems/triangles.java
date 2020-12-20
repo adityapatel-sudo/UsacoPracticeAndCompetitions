@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class triangles {
     public static  void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("swap.in"));
+        Scanner scanner = new Scanner(new File("race.in"));
         PrintWriter out = new PrintWriter(new FileWriter("triangles.out"));
 
         int num = scanner.nextInt();

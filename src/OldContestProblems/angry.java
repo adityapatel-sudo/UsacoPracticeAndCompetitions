@@ -8,7 +8,7 @@ public class angry {
         long start = System.nanoTime();
         long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 
-        Scanner scanner = new Scanner(new File("swap.in"));
+        Scanner scanner = new Scanner(new File("race.in"));
         PrintWriter out = new PrintWriter(new FileWriter("angry.out"));
 
         boolean[] blocks = new boolean[100000001];

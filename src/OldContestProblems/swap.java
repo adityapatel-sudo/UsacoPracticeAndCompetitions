@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class swap {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("swap.in"));
+        Scanner scanner = new Scanner(new File("race.in"));
         PrintWriter out = new PrintWriter(new FileWriter("swap.out"));
 
         int n = scanner.nextInt(),

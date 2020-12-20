@@ -10,7 +10,7 @@ public class herding {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(new File("swap.in"));
+        Scanner sc = new Scanner(new File("race.in"));
         PrintWriter out = new PrintWriter(new FileWriter("herding.out"));
 
         int left,middle,right;
