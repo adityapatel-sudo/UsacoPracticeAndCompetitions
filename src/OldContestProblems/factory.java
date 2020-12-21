@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class factory {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("buckets.in"));
+        Scanner scanner = new Scanner(new File("traffic.in"));
         PrintWriter out = new PrintWriter(new FileWriter("factory.out"));
 
         int[] conveyors = new int[scanner.nextInt()];
