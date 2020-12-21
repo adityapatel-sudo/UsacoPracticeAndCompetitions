@@ -8,6 +8,6 @@ public class Main {
 
         System.out.println(st.nextToken());
         System.out.println(st.nextToken());
-    }
+   }
 
 }

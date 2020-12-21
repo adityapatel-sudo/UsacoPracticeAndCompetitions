@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class word {
 
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("word.in"));
+        Scanner scanner = new Scanner(new File("lineup.in"));
         PrintWriter out = new PrintWriter(new FileWriter("word.out"));
 
         int numWords = scanner.nextInt();
