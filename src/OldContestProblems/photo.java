@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class photo {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("factory.in"));
+        Scanner scanner = new Scanner(new File("buckets.in"));
         PrintWriter out = new PrintWriter(new FileWriter("photo.out"));
 
         int[] aList = new int[scanner.nextInt()];

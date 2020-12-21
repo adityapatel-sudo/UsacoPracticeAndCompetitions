@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class lineup {
     public static void main(String[] args) throws IOException {
 
-        Scanner scanner = new Scanner(new File("factory.in"));
+        Scanner scanner = new Scanner(new File("buckets.in"));
         PrintWriter out = new PrintWriter(new FileWriter("lineup.out"));
 
         String[] locations = new String[]{"Bessie","Buttercup", "Belinda", "Beatrice", "Bella", "Blue", "Betsy", "Sue"};
