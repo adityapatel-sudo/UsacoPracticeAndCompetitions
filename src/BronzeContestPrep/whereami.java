@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //messed up on some test cases... Solution more simple than this: http://www.usaco.org/current/data/sol_whereami_bronze_dec19.html
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=964#
 import java.io.File;

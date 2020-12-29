@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 
 //easy success, simple problem
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=987

@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=915
 import java.io.File;
 import java.io.FileWriter;

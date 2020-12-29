@@ -1,11 +1,10 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //failed evetually but found solution, think triangle at top of graph
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=989
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class race {

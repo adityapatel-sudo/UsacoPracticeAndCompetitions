@@ -1,12 +1,10 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //easy to solve, just shouldve done few more test cases
 //http://www.usaco.org/index.php?page=viewproblem2&cpid=939
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
 
 public class buckets {

@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 
 import java.io.File;
 import java.io.FileWriter;

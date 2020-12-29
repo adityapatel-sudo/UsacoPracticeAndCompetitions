@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 
 //working solution, just checks all possible trios of points for largest triangle
 //v easy, did in 20 min

@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 
 //working solution, checks total different substrings, returns
 //v easy, did in 15 min

@@ -1,7 +1,6 @@
-package OldContestProblems;
+package BronzeContestPrep;
 
 import java.io.*;
-import java.net.Inet4Address;
 import java.util.*;
 import java.util.List;
 

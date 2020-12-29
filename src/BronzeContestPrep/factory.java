@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //factory problem : http://www.usaco.org/index.php?page=viewproblem2&cpid=940#
 //was not too difficult
 import java.io.File;
@@ -6,7 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 

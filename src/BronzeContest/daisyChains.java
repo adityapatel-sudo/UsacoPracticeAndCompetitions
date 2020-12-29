@@ -1,11 +1,10 @@
-package BronzeContest1;
+package BronzeContest;
 
 //also a very easy problem, 2nd easiest in the contest
 //http://www.usaco.org/index.php?page=viewproblem&cpid=1047
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 

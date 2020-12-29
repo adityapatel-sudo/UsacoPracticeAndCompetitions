@@ -1,4 +1,4 @@
-package OldContestProblems;
+package BronzeContestPrep;
 //solution simple, brute force only has 8! permutations, check if each follows patterm
 //problem : http://www.usaco.org/index.php?page=viewproblem2&cpid=965
 import java.io.File;

@@ -1,4 +1,4 @@
-package BronzeContest1;
+package BronzeContest;
 //easiest problem in first contest!!
 //http://www.usaco.org/index.php?page=viewproblem&cpid=1047
 import java.io.IOException;

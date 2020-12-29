@@ -1,4 +1,4 @@
-package BronzeContest1;
+package BronzeContest;
 
 //hardest problem in my first contest!!
 //solved most test cases, but the three longest ones were unsuccessful
@@ -6,12 +6,10 @@ package BronzeContest1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class StuckInARutBruteForce{
+public class StuckInARut {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         PrintWriter out = new PrintWriter(System.out);
@@ -43,26 +41,6 @@ public class StuckInARutBruteForce{
                 hashmapAnswers[i] = locations[i][0];
             }
         }
-
-/*
-        out.println(direc.toString());
-        out.println(Arrays.deepToString(locations));
-        out.println(Arrays.deepToString(locations));
-
-        out.println("x to cross is "+ xToCross);
-        out.println("y to cross is "+ yToCross);
-
-        out.println(Arrays.toString(eastMovingTracksHash.get(4)));
-        out.println(Arrays.toString(eastMovingTracksHash.get(5)));
-        out.println(Arrays.toString(eastMovingTracksHash.get(6)));
-        out.println();
-        out.println(Arrays.toString(northMovingTracksHash.get(5)));
-        out.println(Arrays.toString(northMovingTracksHash.get(8)));
-        out.println(Arrays.toString(northMovingTracksHash.get(11)));
-
-*/
-
-
 
         for(int moves =0; moves == returnHighest(numberMoves) ;moves++){
             increaseLocations(locations,direc.toString(),numberMoves);
@@ -143,7 +121,6 @@ public class StuckInARutBruteForce{
             }
         }
     }
-
     static int returnHighest(int[] numberMoves){
         int max = 0;
         for(int i = 0; i< numberMoves.length;i++){
