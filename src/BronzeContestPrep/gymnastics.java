@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class gymnastics {
 
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(new File("traffic.in"));
+        Scanner scanner = new Scanner(new File("lifeguards.in"));
         PrintWriter out = new PrintWriter(new FileWriter("gymnastics.out"));
 
         int numOfComps = scanner.nextInt(),numCows=scanner.nextInt(),temp=0;

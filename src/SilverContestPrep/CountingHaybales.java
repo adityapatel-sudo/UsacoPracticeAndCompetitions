@@ -1,5 +1,7 @@
 package SilverContestPrep;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -9,8 +11,8 @@ import java.util.Scanner;
 
 public class CountingHaybales {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+        Scanner scanner = new Scanner(new File("lifeguards.in"));
+        PrintWriter out = new PrintWriter(new FileWriter("lifeguards.out"));
 
         int n = scanner.nextInt();
         int q = scanner.nextInt();
@@ -24,12 +26,18 @@ public class CountingHaybales {
         Arrays.sort(locations);
 
         for(int i = 0; i< q;i++){
-            start= scanner.nextInt();
+            start = scanner.nextInt();
             end = scanner.nextInt();
 
-            out.println(Arrays.binarySearch(locations,end)-Arrays.binarySearch(locations,start)+1);
+            start = Arrays.binarySearch(locations,start);
+            if(start<0)start = -1*(start+1);
+            end = Arrays.binarySearch(locations,end);
+            if(end<0) end = -1*(end+1)-1;
+
+            out.println(end-start+1);
         }
 
         out.close();
     }
+
 }
