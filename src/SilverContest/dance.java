@@ -9,7 +9,6 @@ import java.util.*;
 public class dance {
     static ArrayList<ArrayList<Integer>> paths;
     static ArrayList<Integer> path;
-    static int[] ans;
     static int[] positions;
     static ArrayList<HashSet<Integer>> u;
 
