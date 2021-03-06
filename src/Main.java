@@ -4,24 +4,12 @@ import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) {
-
+        for(int i = 0; i < 100; i++){
+            System.out.println(Math.random());
+        }
 
    }
 
 }
-class Seat{
-     boolean available;
-     int tier;
-    public Seat(boolean isAvail, int tierNum){
-        available = isAvail;
-        tier = tierNum;
-    }
 
-
-
-    public boolean isAvailable(){
-        ArrayList<Integer> asdf = new ArrayList<Integer>();
-        return false;
-    }
-}
 

@@ -36,7 +36,7 @@ public class lifeguards {
 class Timing implements Comparable<Timing>{
     int start;
     int end;
-    int overlap;
+    int notOverlapped;
     public Timing(int start, int end){
         this.start=start;
         this.end=end;
@@ -44,7 +44,7 @@ class Timing implements Comparable<Timing>{
 
     @Override
     public String toString() {
-        return start+" "+end;
+        return start+" "+end+" "+notOverlapped;
     }
 
     @Override
