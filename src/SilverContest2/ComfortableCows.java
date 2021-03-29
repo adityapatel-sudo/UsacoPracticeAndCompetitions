@@ -1,5 +1,8 @@
 package SilverContest2;
 
+
+//http://www.usaco.org/index.php?page=viewproblem2&cpid=1110
+//Comfortable Cows USACO Problem which was
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -123,5 +126,4 @@ public class ComfortableCows {
             nCow--;
         }
     }
-
 }
